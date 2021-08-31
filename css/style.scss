@@ -65,6 +65,29 @@ body {
         margin: 0 5px;
         list-style: none;
         line-height: 50px;
+
+        & > i.bx-search {
+            position: absolute;
+            z-index: 99;
+            color: #fff;
+            font-size: 22px;
+        }
+
+        input {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 12px;
+            border: none;
+            outline: none;
+            background: #1d1b31;
+            padding-left: 50px;
+            font-size: 18px;
+            color: #fff;
+        }
+
         a {
             color: #fff;
             display: flex;
@@ -73,10 +96,12 @@ body {
             transition: all 0.4s ease;
             border-radius: 12px;
         }
+
         a:hover {
             color: #11101d;
             background-color: #fff;
         }
+
         a:link,
         a:visited {
             color: #fff;
@@ -91,5 +116,59 @@ body {
                 text-align: center;
             }
         }
+    }
+}
+
+.sidebar {
+    .profile_content {
+        position: absolute;
+        color: #fff;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        .profile {
+            position: relative;
+            padding: 10px 6px;
+            height: 60px;
+            background-color: #1d1b31;
+
+            .profile_details {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 45px;
+                    height: 45px;
+                    object-fit: cover;
+                    border-radius: 12px;
+                }
+
+                .name_job {
+                    // border: 1px solid red;
+                    margin-left: 10px;
+
+                    .name {
+                        font-size: 15px;
+                        font-weight: 400;
+                    }
+
+                    .job {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    #log_out {
+        position: absolute;
+        left: 88%;
+        bottom: 5px;
+        transform: translateX(-50%);
+        min-width: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        border-radius: 12px;
     }
 }
