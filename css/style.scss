@@ -20,47 +20,11 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 240px;
+    width: 78px;
     background: #11101d;
     padding: 6px 14px;
-}
+    transition: all 0.5s ease;
 
-.logo {
-    color: #fff;
-    display: flex;
-    height: 50px;
-    width: 100%;
-    align-items: center;
-}
-
-.logo i {
-    font-size: 28px;
-    margin-right: 5px;
-}
-
-.logo_name {
-    font-size: 20px;
-    font-weight: 400;
-}
-
-#btn {
-    position: absolute;
-    color: #fff;
-    left: 90%;
-    top: 6px;
-    font-size: 20px;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    line-height: 50px;
-    transform: translateX(-50%);
-}
-
-.sidebar .active {
-    width: 240px;
-}
-
-.sidebar {
     ul {
         margin-top: 20px;
 
@@ -71,6 +35,10 @@ body {
             margin: 0 5px;
             list-style: none;
             line-height: 50px;
+
+            a > span {
+                display: none;
+            }
 
             a:link,
             a:visited {
@@ -95,14 +63,21 @@ body {
                 }
             }
 
-            & > i.bx-search {
+            & > .bx-search {
                 position: absolute;
                 z-index: 99;
                 color: #fff;
                 font-size: 22px;
+                transition: all 0.5s ease;
+            }
+
+            & > .bx-search:hover {
+                background: #fff;
+                color: #1d1b31;
             }
 
             input {
+                display: none;
                 position: absolute;
                 height: 100%;
                 width: 100%;
@@ -120,7 +95,7 @@ body {
             span.tooltip {
                 // display: none;
                 position: absolute;
-                left: 122px;
+                left: 78px;
                 top: 0;
                 transform: translateY(-50%);
                 border-radius: 6px;
@@ -142,6 +117,39 @@ body {
                 opacity: 1;
             }
         }
+    }
+
+    .logo {
+        color: #fff;
+        display: flex;
+        height: 50px;
+        width: 100%;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .logo i {
+        font-size: 28px;
+        margin-right: 5px;
+    }
+
+    .logo_name {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    #btn {
+        position: absolute;
+        color: #fff;
+        left: 50%;
+        top: 6px;
+        font-size: 20px;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        transform: translateX(-50%);
     }
 
     .profile_content {
@@ -195,10 +203,6 @@ body {
         font-size: 20px;
         border-radius: 12px;
     }
-
-    .active {
-        width: 240px;
-    }
 }
 
 .home_content {
@@ -212,5 +216,33 @@ body {
         font-weight: 500;
         color: #1d1b32;
         margin: 12px;
+    }
+}
+
+.active {
+    width: 340px;
+    z-index: 1000;
+    #btn {
+        left: 90%;
+    }
+    .logo_content {
+        .logo {
+            opacity: 1;
+            pointer-events: none;
+        }
+    }
+    & > ul.nav_list > li {
+        & > input {
+            display: block;
+        }
+
+        & > span.tooltip {
+            display: none;
+        }
+
+        & > a > span {
+            display: block;
+            transition: all 1s ease;
+        }
     }
 }
