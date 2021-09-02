@@ -25,6 +25,39 @@ body {
     padding: 6px 14px;
     transition: all 0.5s ease;
 
+    .logo {
+        color: #fff;
+        display: flex;
+        height: 50px;
+        width: 100%;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .logo i {
+        font-size: 28px;
+        margin-right: 5px;
+    }
+
+    .logo_name {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    #btn {
+        position: absolute;
+        color: #fff;
+        left: 50%;
+        top: 6px;
+        font-size: 20px;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        transform: translateX(-50%);
+    }
+
     ul {
         margin-top: 20px;
 
@@ -35,6 +68,14 @@ body {
             margin: 0 5px;
             list-style: none;
             line-height: 50px;
+
+            &:first-child {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgba(29, 28, 49, 1);
+                border-radius: 12px;
+            }
 
             a > span {
                 display: none;
@@ -119,39 +160,6 @@ body {
         }
     }
 
-    .logo {
-        color: #fff;
-        display: flex;
-        height: 50px;
-        width: 100%;
-        align-items: center;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .logo i {
-        font-size: 28px;
-        margin-right: 5px;
-    }
-
-    .logo_name {
-        font-size: 20px;
-        font-weight: 400;
-    }
-
-    #btn {
-        position: absolute;
-        color: #fff;
-        left: 50%;
-        top: 6px;
-        font-size: 20px;
-        height: 50px;
-        width: 50px;
-        text-align: center;
-        line-height: 50px;
-        transform: translateX(-50%);
-    }
-
     .profile_content {
         position: absolute;
         color: #fff;
@@ -160,6 +168,7 @@ body {
         width: 100%;
 
         .profile {
+            display: none;
             position: relative;
             padding: 10px 6px;
             height: 60px;
@@ -195,13 +204,17 @@ body {
 
     #log_out {
         position: absolute;
-        left: 88%;
+        left: 50%;
         bottom: 5px;
         transform: translateX(-50%);
         min-width: 50px;
         line-height: 50px;
         font-size: 20px;
         border-radius: 12px;
+        background-color: rgba(29, 28, 49, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -209,7 +222,7 @@ body {
     position: absolute;
     height: 100%;
     width: calc(100% - 240px);
-    left: 240px;
+    left: 78px;
 
     .text {
         font-size: 25px;
@@ -217,6 +230,10 @@ body {
         color: #1d1b32;
         margin: 12px;
     }
+}
+
+.home_content_left {
+    left: 342px;
 }
 
 .active {
@@ -232,6 +249,15 @@ body {
         }
     }
     & > ul.nav_list > li {
+        &:first-child {
+            display: flex;
+            justify-content: flex-end;
+
+            i {
+                margin-right: 12px;
+            }
+        }
+
         & > input {
             display: block;
         }
@@ -243,6 +269,16 @@ body {
         & > a > span {
             display: block;
             transition: all 1s ease;
+        }
+    }
+
+    .profile_content {
+        .profile {
+            display: block;
+        }
+
+        #log_out {
+            left: 88%;
         }
     }
 }
